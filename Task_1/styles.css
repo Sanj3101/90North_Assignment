@@ -1,0 +1,141 @@
+/* :root{
+  --icon-width: 50px;
+  --border-width: 8px;
+} */
+
+/* General Styles */
+body {
+    height:100vh;
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(108, 116, 114);
+  }
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    text-align: center;
+    padding: 1rem 0rem 1rem 0rem;
+    z-index: 1000;
+
+  }
+
+.nav-links {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #d0cccc;
+    font-weight: bold;
+}
+
+.nav-links:hover {
+    text-decoration: underline;
+}
+
+/* Main Layout */
+.container {
+  height: inherit;
+  display: flex;
+  margin-top: 50px; /*adjust for fixed navbar*/
+  flex: 1;
+}
+
+.left-menu {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 1rem;
+    transition: width 0.3s;
+  }
+
+.collapsed{
+
+  .left-menu-labels,.left-menu-icon{
+    display: none;
+  }
+}
+
+.left-menu-links{
+  display: flex;
+  align-items: center;
+  color:#333;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.left-menu-labels{
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.left-menu-links:hover{
+  background-color:rgb(219, 219, 219);
+}
+
+.left-menu-icon{
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content {
+  flex: 1;
+  padding: 1rem;
+  background-color: #fff;
+  overflow-y:auto;
+}
+
+.right-panel {
+    width: 20%;
+    background-color: #f9f9f9;
+    padding: 1rem;
+  }
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #33333378;
+    color: #d0cccc;
+
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .left-menu {
+      width: 15%;
+      font-size: 80%;
+    }
+
+    .right-panel {
+      width: 15%;
+    }
+  }
+
+@media screen and (max-width: 768px) {
+    .left-menu {
+      width: 10%;
+    }
+    .left-menu-labels{
+      display:none;
+    }
+
+    .right-panel {
+      display: none;
+    }
+  }
